@@ -1,6 +1,18 @@
 # 🧠 Vyapar-Agent: Distributed Multi-Agent Retail State Orchestrator
 > **NASA/SpaceX-grade Fault-Tolerant Edge-to-Agent State Machine automating bookkeeping and real-time ledger synchronization for 63M+ APAC micro-merchants.**
 
+```text
+ ┌──────────────────────────────────────────────────────────┐
+ │                    BUILDER LICENSE                       │
+ │               GEN AI ACADEMY APAC 2026                   │
+ ├──────────────────────────────────────────────────────────┤
+ │  [🪪] LICENSE NO:  APAC-2026-V-KAMTHE                     │
+ │  [👤] BUILDER:     Vaishnavi Kamthe                       │
+ │  [⚙️] ROLE:        Lead AI Systems Architect              │
+ │  [🔒] STATUS:      ACTIVE & CERTIFIED 🟢                  │
+ └──────────────────────────────────────────────────────────┘
+```
+
 [![Engine-Core](https://img.shields.io/badge/System--Architecture-Principal--Engineer-0052CC?style=for-the-badge&logo=cpu-core)](https://github.com)
 [![Orchestrator](https://img.shields.io/badge/Agent--Control--Plane-Gemini--1.5--Pro-8E75C2?style=for-the-badge&logo=google-gemini)](https://deepmind.google/technologies/gemini)
 [![Latency](https://img.shields.io/badge/Avg--Pipeline--Latency-%3C_1.8s-10b981?style=for-the-badge)]()
