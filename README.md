@@ -2,8 +2,6 @@
 > **NASA/SpaceX-grade Fault-Tolerant Edge-to-Agent State Machine automating bookkeeping and real-time ledger synchronization for 63M+ APAC micro-merchants.**
 
 [![Builder](https://img.shields.io/badge/Builder-Vaishnavi_Kamthe-0052CC?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaishnavi-ctrl-jpg)
-[![UK-Style Build License](https://img.shields.io/badge/Build_License-APAC--2026--V--KAMTHE-008080?style=for-the-badge&logo=gov.uk&logoColor=white)](https://github.com/vaishnavi-ctrl-jpg)
-[![Role](https://img.shields.io/badge/Role-Lead_AI_Architect-FF5733?style=for-the-badge)](https://github.com/vaishnavi-ctrl-jpg)
 [![Academy](https://img.shields.io/badge/Gen_AI_Academy-APAC_2026-8E75C2?style=for-the-badge&logo=google-cloud&logoColor=white)](https://github.com/vaishnavi-ctrl-jpg)
 
 [![Engine-Core](https://img.shields.io/badge/System--Architecture-Principal--Engineer-0052CC?style=for-the-badge&logo=cpu-core)](https://github.com)
