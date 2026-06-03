@@ -1,0 +1,389 @@
+{
+  "inventory": [
+    {
+      "id": "1",
+      "name": "Amul Milk 500ml",
+      "stock": 19,
+      "lowStockLimit": 10,
+      "price": 30,
+      "costPrice": 26,
+      "supplierName": "Ramesh Milk Distributor",
+      "supplierPhone": "+919876543210"
+    },
+    {
+      "id": "2",
+      "name": "Parle-G Biscuit Small",
+      "stock": 30,
+      "lowStockLimit": 15,
+      "price": 5,
+      "costPrice": 4,
+      "supplierName": "Gupta Kirana Wholesaler",
+      "supplierPhone": "+918765432109"
+    },
+    {
+      "id": "3",
+      "name": "Maggi Noodles 2-Min",
+      "stock": 0,
+      "lowStockLimit": 12,
+      "price": 14,
+      "costPrice": 12,
+      "supplierName": "Gupta Kirana Wholesaler",
+      "supplierPhone": "+918765432109"
+    },
+    {
+      "id": "4",
+      "name": "Britannia Marie Gold",
+      "stock": 30,
+      "lowStockLimit": 10,
+      "price": 10,
+      "costPrice": 8,
+      "supplierName": "Gupta Kirana Wholesaler",
+      "supplierPhone": "+918765432109"
+    },
+    {
+      "id": "5",
+      "name": "Tata Salt 1kg",
+      "stock": 13,
+      "lowStockLimit": 5,
+      "price": 28,
+      "costPrice": 24,
+      "supplierName": "Tata Retail Agency",
+      "supplierPhone": "+917654321098"
+    }
+  ],
+  "sales": [
+    {
+      "id": "sale_1780325761624",
+      "timestamp": "2026-06-01T14:56:01.624Z",
+      "items": [
+        {
+          "name": "Amul Milk 500ml",
+          "quantity": 2,
+          "price": 30,
+          "costPrice": 26
+        },
+        {
+          "name": "Parle-G Biscuit Small",
+          "quantity": 5,
+          "price": 5,
+          "costPrice": 4
+        },
+        {
+          "name": "Maggi Noodles 2-Min",
+          "quantity": 3,
+          "price": 14,
+          "costPrice": 12
+        }
+      ],
+      "totalAmount": 127,
+      "profit": 19
+    },
+    {
+      "id": "sale_1780325858200",
+      "timestamp": "2026-06-01T14:57:38.200Z",
+      "items": [
+        {
+          "name": "Amul Milk 500ml",
+          "quantity": 2,
+          "price": 30,
+          "costPrice": 26
+        },
+        {
+          "name": "Parle-G Biscuit Small",
+          "quantity": 5,
+          "price": 5,
+          "costPrice": 4
+        },
+        {
+          "name": "Maggi Noodles 2-Min",
+          "quantity": 3,
+          "price": 14,
+          "costPrice": 12
+        }
+      ],
+      "totalAmount": 127,
+      "profit": 19
+    },
+    {
+      "id": "sale_1780487066497",
+      "timestamp": "2026-06-03T11:44:26.497Z",
+      "items": [
+        {
+          "name": "Maggi Noodles 2-Min",
+          "quantity": 3,
+          "price": 14,
+          "costPrice": 12
+        },
+        {
+          "name": "Tata Salt 1kg",
+          "quantity": 1,
+          "price": 28,
+          "costPrice": 24
+        }
+      ],
+      "totalAmount": 70,
+      "profit": 10
+    },
+    {
+      "id": "sale_1780487076371",
+      "timestamp": "2026-06-03T11:44:36.371Z",
+      "items": [
+        {
+          "name": "Maggi Noodles 2-Min",
+          "quantity": 3,
+          "price": 14,
+          "costPrice": 12
+        },
+        {
+          "name": "Tata Salt 1kg",
+          "quantity": 1,
+          "price": 28,
+          "costPrice": 24
+        }
+      ],
+      "totalAmount": 70,
+      "profit": 10
+    },
+    {
+      "id": "sale_1780487079939",
+      "timestamp": "2026-06-03T11:44:39.939Z",
+      "items": [
+        {
+          "name": "Amul Milk 500ml",
+          "quantity": 2,
+          "price": 30,
+          "costPrice": 26
+        },
+        {
+          "name": "Parle-G Biscuit Small",
+          "quantity": 5,
+          "price": 5,
+          "costPrice": 4
+        }
+      ],
+      "totalAmount": 85,
+      "profit": 13
+    }
+  ],
+  "logs": [
+    {
+      "id": "log_1780487079944_pzxhw",
+      "timestamp": "2026-06-03T11:44:39.944Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Workflow Complete",
+      "details": "Multi-agent pipeline succeeded. Summary: Aura of Vyapar-Agent is excellent. Today's operations are running flawlessly. Fully synchronized across parsing, inventory, and procurement loops. 0 anomalies detected."
+    },
+    {
+      "id": "log_1780487079941_3rdwy",
+      "timestamp": "2026-06-03T11:44:39.941Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Sale Registered",
+      "details": "Registered sale worth ₹85 with profit of ₹13."
+    },
+    {
+      "id": "log_1780487079936_j4z30",
+      "timestamp": "2026-06-03T11:44:39.936Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Inventory Update",
+      "details": "Processing inventory updates for 2 items."
+    },
+    {
+      "id": "log_1780487079932_sko0e",
+      "timestamp": "2026-06-03T11:44:39.932Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Parsing Success",
+      "details": "Parsed 2 items successfully from receipt."
+    },
+    {
+      "id": "log_1780487079929_vwm1a",
+      "timestamp": "2026-06-03T11:44:39.929Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Start Parsing",
+      "details": "Received raw receipt text for structural extraction."
+    },
+    {
+      "id": "log_1780487079926_ya1o3",
+      "timestamp": "2026-06-03T11:44:39.926Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Begin Workflow",
+      "details": "Initializing multi-agent bill tracking pipeline."
+    },
+    {
+      "id": "log_1780487076377_prsye",
+      "timestamp": "2026-06-03T11:44:36.377Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Workflow Complete",
+      "details": "Multi-agent pipeline succeeded. Summary: Aura of Vyapar-Agent is excellent. Today's operations are running flawlessly. Fully synchronized across parsing, inventory, and procurement loops. 0 anomalies detected."
+    },
+    {
+      "id": "log_1780487076373_0b0y3",
+      "timestamp": "2026-06-03T11:44:36.373Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Sale Registered",
+      "details": "Registered sale worth ₹70 with profit of ₹10."
+    },
+    {
+      "id": "log_1780487076367_qfthz",
+      "timestamp": "2026-06-03T11:44:36.367Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Inventory Update",
+      "details": "Processing inventory updates for 2 items."
+    },
+    {
+      "id": "log_1780487076362_ab9ss",
+      "timestamp": "2026-06-03T11:44:36.363Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Parsing Success",
+      "details": "Parsed 2 items successfully from receipt."
+    },
+    {
+      "id": "log_1780487076359_isl6x",
+      "timestamp": "2026-06-03T11:44:36.359Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Start Parsing",
+      "details": "Received raw receipt text for structural extraction."
+    },
+    {
+      "id": "log_1780487076355_nyoot",
+      "timestamp": "2026-06-03T11:44:36.355Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Begin Workflow",
+      "details": "Initializing multi-agent bill tracking pipeline."
+    },
+    {
+      "id": "log_1780487066508_ij85h",
+      "timestamp": "2026-06-03T11:44:26.508Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Workflow Complete",
+      "details": "Multi-agent pipeline succeeded. Summary: Aura of Vyapar-Agent is excellent. Today's operations are running flawlessly. Fully synchronized across parsing, inventory, and procurement loops. 0 anomalies detected."
+    },
+    {
+      "id": "log_1780487066500_4ku6e",
+      "timestamp": "2026-06-03T11:44:26.500Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Sale Registered",
+      "details": "Registered sale worth ₹70 with profit of ₹10."
+    },
+    {
+      "id": "log_1780487066495_b1k9r",
+      "timestamp": "2026-06-03T11:44:26.495Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Inventory Update",
+      "details": "Processing inventory updates for 2 items."
+    },
+    {
+      "id": "log_1780487066493_bucxl",
+      "timestamp": "2026-06-03T11:44:26.493Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Parsing Success",
+      "details": "Parsed 2 items successfully from receipt."
+    },
+    {
+      "id": "log_1780487066485_5vmmz",
+      "timestamp": "2026-06-03T11:44:26.485Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Start Parsing",
+      "details": "Received raw receipt text for structural extraction."
+    },
+    {
+      "id": "log_1780487066480_oi095",
+      "timestamp": "2026-06-03T11:44:26.481Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Begin Workflow",
+      "details": "Initializing multi-agent bill tracking pipeline."
+    },
+    {
+      "id": "log_1780325858202_sl3nk",
+      "timestamp": "2026-06-01T14:57:38.202Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Workflow Complete",
+      "details": "Multi-agent pipeline succeeded. Summary: Aura of Vyapar-Agent is excellent. Today's operations are running flawlessly. Fully synchronized across parsing, inventory, and procurement loops. 0 anomalies detected."
+    },
+    {
+      "id": "log_1780325858201_tffch",
+      "timestamp": "2026-06-01T14:57:38.201Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Sale Registered",
+      "details": "Registered sale worth ₹127 with profit of ₹19."
+    },
+    {
+      "id": "log_1780325858199_f78g8",
+      "timestamp": "2026-06-01T14:57:38.199Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Inventory Update",
+      "details": "Processing inventory updates for 3 items."
+    },
+    {
+      "id": "log_1780325858197_89q78",
+      "timestamp": "2026-06-01T14:57:38.197Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Parsing Success",
+      "details": "Parsed 3 items successfully from receipt."
+    },
+    {
+      "id": "log_1780325858195_rttdj",
+      "timestamp": "2026-06-01T14:57:38.195Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Start Parsing",
+      "details": "Received raw receipt text for structural extraction."
+    },
+    {
+      "id": "log_1780325858194_ur2dr",
+      "timestamp": "2026-06-01T14:57:38.194Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Begin Workflow",
+      "details": "Initializing multi-agent bill tracking pipeline."
+    },
+    {
+      "id": "log_1780325761627_gcky4",
+      "timestamp": "2026-06-01T14:56:01.627Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Workflow Complete",
+      "details": "Multi-agent pipeline succeeded. Summary: Aura of Vyapar-Agent is excellent. Today's operations are running flawlessly. Fully synchronized across parsing, inventory, and procurement loops. 0 anomalies detected."
+    },
+    {
+      "id": "log_1780325761625_m977t",
+      "timestamp": "2026-06-01T14:56:01.625Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Sale Registered",
+      "details": "Registered sale worth ₹127 with profit of ₹19."
+    },
+    {
+      "id": "log_1780325761622_0xhlf",
+      "timestamp": "2026-06-01T14:56:01.622Z",
+      "agent": "Agent 2 (Inventory Manager)",
+      "action": "Inventory Update",
+      "details": "Processing inventory updates for 3 items."
+    },
+    {
+      "id": "log_1780325761619_zc7hk",
+      "timestamp": "2026-06-01T14:56:01.619Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Parsing Success",
+      "details": "Parsed 3 items successfully from receipt."
+    },
+    {
+      "id": "log_1780325761616_jahfx",
+      "timestamp": "2026-06-01T14:56:01.616Z",
+      "agent": "Agent 1 (Receipt Parser)",
+      "action": "Start Parsing",
+      "details": "Received raw receipt text for structural extraction."
+    },
+    {
+      "id": "log_1780325761613_r7w0h",
+      "timestamp": "2026-06-01T14:56:01.613Z",
+      "agent": "Agent 0 (Supervisor)",
+      "action": "Begin Workflow",
+      "details": "Initializing multi-agent bill tracking pipeline."
+    },
+    {
+      "id": "log_1",
+      "timestamp": "2026-06-01T14:56:01.608Z",
+      "agent": "System",
+      "action": "Initialize",
+      "details": "Vyapar-Agent DB initialized with default catalog."
+    }
+  ],
+  "procurementAlerts": [],
+  "dailyReports": []
+}
