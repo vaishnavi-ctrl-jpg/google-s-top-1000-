@@ -6,6 +6,11 @@
 [![Builder](https://img.shields.io/badge/Builder-Vaishnavi_Kamthe-0052CC?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaishnavi-ctrl-jpg)
 [![Academy](https://img.shields.io/badge/Gen_AI_Academy-APAC_2026-8E75C2?style=for-the-badge&logo=google-cloud&logoColor=white)](https://github.com/vaishnavi-ctrl-jpg)
 
+[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com)
+[![Gemini](https://img.shields.io/badge/Gemini_1.5_Pro-8E75C2?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini)
+[![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![Firebase](https://img.shields.io/badge/Firebase_Hosting-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com)
+
 *An elite, fault-tolerant edge-to-agent state machine automating inventory, sales accounting, and supplier procurement autonomously for micro-merchants.*
 
 [🚀 Dev Playbook](#-dev-playbook) • [🤖 Agent Specifications](#-agent-specifications) • [📊 System Architecture](#-system-architecture) • [💡 APAC Impact](#-apac-impact)
@@ -18,35 +23,39 @@ Across the Asia-Pacific region, **63 million Kirana stores** power neighborhood 
 
 ---
 
-## 📊 System Architecture
-```text
-  [ Physical Cash Register ] ─────── ( Edge Bridge Tap ) ─────── [ HTTPS POST Broadcast ]
-                                                                          │
-                                                                          ▼
-                                                               ┌─────────────────────┐
-                                                               │ AGENT 0: SUPERVISOR │
-                                                               │   (Control Plane)   │
-                                                               └──────────┬──────────┘
-                                                                          │
-                                                    ┌─────────────────────┼─────────────────────┐
-                                                    ▼                     ▼                     ▼
-                                              ┌───────────┐         ┌───────────┐         ┌───────────┐
-                                              │  AGENT 1  │         │  AGENT 2  │         │  AGENT 3  │
-                                              │  Parser   │         │ Stock Mgr │         │ Procurement
-                                              └─────┬─────┘         └─────┬─────┘         └─────┬─────┘
-                                                    │                     │                     │
-                                                    └─────────────────────┼─────────────────────┘
-                                                                          │
-                                                                          ▼
-                                                               ┌─────────────────────┐
-                                                               │   Data State Bus    │
-                                                               │    (data/db.json)   │
-                                                               └──────────┬──────────┘
-                                                                          │
-                                                                          ▼
-                                                               ┌─────────────────────┐
-                                                               │  Dashboard Web UI   │
-                                                               └─────────────────────┘
+## 📊 System Architecture & Data Flow
+
+```mermaid
+graph TD
+    %% Nodes & Processing Flow
+    A["🖨️ POS Billing Machine (Prints Receipt)"] --> B["🔌 Zero-Overhead Local Tap (Edge Bridge)"]
+    B -->|HTTP Event Ingest| C["🧠 AGENT 0: Supervisor (Gemini 1.5 Pro)"]
+    
+    subgraph Control_Plane ["Multi-Agent Execution Pipeline (Controlled by Agent 0)"]
+        C -->|1. Request Parse| D["🔍 AGENT 1: Receipt Parser (Flash)"]
+        D -->|Clean Item AST JSON| C
+        C -->|2. Request Ledger Update| E["📦 AGENT 2: Stock Manager (Flash)"]
+        E -->|Evaluate Stock Deltas| C
+        C -->|3. Request Supplier Reorder| F["📢 AGENT 3: Procurement Agent (Flash)"]
+        F -->|Draft WhatsApp Template| C
+    end
+
+    C -->|Commit atomic write| G[("💾 Data State Bus (data/db.json)")]
+    C -->|Stream transaction log| H["📊 Visual Glassmorphism Client (Next.js 16)"]
+    C -->|Trigger procurement card| I["🚨 1-Click WhatsApp Restock Card"]
+
+    J["💬 Shopowner Conversation"] --> K["🤖 AGENT 4: Dukaan Mitra Helper (Gemini 1.5 Pro)"]
+    K -->|Query context| G
+    K -->|Warm Hinglish response| H
+    
+    %% Colors & Themes
+    style C fill:#6366f1,stroke:#fff,stroke-width:2px,color:#fff
+    style D fill:#4f46e5,stroke:#4f46e5,color:#fff
+    style E fill:#4f46e5,stroke:#4f46e5,color:#fff
+    style F fill:#4f46e5,stroke:#4f46e5,color:#fff
+    style K fill:#10b981,stroke:#fff,stroke-width:2px,color:#fff
+    style G fill:#0f172a,stroke:#6366f1,color:#fff
+    style H fill:#060814,stroke:#6366f1,color:#fff
 ```
 
 ---
@@ -80,14 +89,21 @@ Download package structures and initialize configurations:
 npm install
 ```
 
-### 2. Live Dev Server
+### 2. Add API Key (Optional)
+Create a `.env.local` file:
+```env
+GEMINI_API_KEY=your_gemini_key_here
+```
+*Note: If no API key is set, the application defaults to an **offline simulation engine** demonstrating identical parsing, stock deduction, and WhatsApp notifications instantly for judges.*
+
+### 3. Live Dev Server
 Boot up the visual interface in local development mode:
 ```bash
 npm run dev
 ```
 Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 
-### 3. Automated Test Verification
+### 4. Automated Test Verification
 Run our end-to-end integration test to simulate receipt ingestion, agent routing, and JSON database state changes:
 ```bash
 npx tsx test-agents.ts
