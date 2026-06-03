@@ -28,17 +28,27 @@ export async function callGemini(
 
   if (isGeminiEnabled()) {
     try {
-      // Correct v1 SDK call format
+      // Use 'gemini-1.5-flash' but handle potential API version fallbacks by stripping prefix
       const model = ai.getGenerativeModel({ 
-        model: modelName,
+        model: useFlash ? 'gemini-1.5-flash' : 'gemini-1.5-pro',
         systemInstruction: systemInstruction
       });
       const response = await model.generateContent(prompt);
       const text = response.response.text();
       return text || '';
     } catch (error) {
-      console.error(`Gemini API call failed using ${modelName}:`, error);
-      // Fallback to mock if API key fails or rate-limited
+      console.error(`Gemini API call failed using ${modelName}, attempting legacy model:`, error);
+      try {
+        // Retry with legacy stable model name if 1.5 models are not enabled on this key type
+        const legacyModel = ai.getGenerativeModel({ 
+          model: 'gemini-pro',
+          systemInstruction: systemInstruction
+        });
+        const response = await legacyModel.generateContent(prompt);
+        return response.response.text() || '';
+      } catch (retryError) {
+        console.error('Legacy model fallback also failed:', retryError);
+      }
     }
   }
 
@@ -50,18 +60,18 @@ export async function callGemini(
  * High-quality simulations of our specialized agents
  */
 function simulateAgent(prompt: string, systemInstruction: string): string {
-  // Determine which agent is calling by looking at the system instruction or prompt
   const lowerInstruction = systemInstruction.toLowerCase();
   
-  if (lowerInstruction.includes('parser') || lowerInstruction.includes('receipt')) {
+  // MATCH HELPER/MITRA FIRST to prevent false matches with 'procurement' text inside the helper context prompt
+  if (lowerInstruction.includes('helper') || lowerInstruction.includes('mitra') || lowerInstruction.includes('dukaan')) {
+    // Agent 4: Dukaan Mitra
+    return simulateDukaanMitra(prompt);
+  } else if (lowerInstruction.includes('parser') || lowerInstruction.includes('receipt')) {
     // Agent 1: Receipt Parser
     return simulateReceiptParser(prompt);
   } else if (lowerInstruction.includes('procurement') || lowerInstruction.includes('supplier')) {
     // Agent 3: Procurement Agent
     return simulateProcurementAgent(prompt);
-  } else if (lowerInstruction.includes('helper') || lowerInstruction.includes('mitra')) {
-    // Agent 4: Dukaan Mitra
-    return simulateDukaanMitra(prompt);
   } else if (lowerInstruction.includes('supervisor') || lowerInstruction.includes('health report')) {
     // Agent 0: Supervisor Agent
     return simulateSupervisorAgent(prompt);
